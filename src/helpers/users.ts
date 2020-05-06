@@ -33,7 +33,7 @@ async function removeUser(username: string, group: string) {
 
     let exists = await userModel.exists(user);
     if (exists) {
-        await userModel.remove(user);
+        await userModel.deleteOne(user);
     }
 }
 
