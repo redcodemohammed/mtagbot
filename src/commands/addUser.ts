@@ -33,7 +33,7 @@ export default async (ctx: TelegrafContext) => {
             } else {
 
                 //add to db.
-                await addUser(username, String(groupId));
+                await addUser(`@${username}`, String(groupId));
                 ctx.reply(`${username}, was added I will tag that user next time`);
             }
         }
