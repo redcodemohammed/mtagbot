@@ -9,6 +9,7 @@ export default async (ctx: TelegrafContext) => {
         if (admins.includes(senderId)) {
 
             let usernames = ctx.message.text.split(" ")
+            usernames = usernames.filter(u => u);
             usernames.shift();
             if (usernames.length > 0) {
                 if (!usernames.every(username => username.startsWith("@"))) {
