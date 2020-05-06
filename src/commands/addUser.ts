@@ -29,7 +29,7 @@ export default async (ctx: TelegrafContext) => {
             let reply_to_message = ctx.update.message.reply_to_message;
             let username = reply_to_message?.from.username;
             if (!username) {
-                ctx.reply("You have to reply to a message.");
+                return ctx.reply("You have to reply to a message.");
             }
             //add to db.
             await addUser(username, String(groupId));
