@@ -1,6 +1,6 @@
 # mtagbot
 A Telegram bot to tag list of users.
-Offial depoly: [@matgbot](https://t.me/mtagbot)
+Official deploy: [@matgbot](https://t.me/mtagbot)
 ----
 ## Installation
 
@@ -42,14 +42,14 @@ Command                 | Role       | Available at | Description
 ## How to use some commands
 
 ### /adduser
-Use this command to add new users to the tag list, by replying to thier message or by adding thier usernames after the command.
+Use this command to add new users to the tag list, by replying to their message or by adding their usernames after the command.
 #### example
 ```
 /adduser @redcode9000 @mohammed92001
 ```
 
 ### /removeuser
-Use this command to remove users from the tag list, by replying to thier message or by adding thier usernames after the command.
+Use this command to remove users from the tag list, by replying to their message or by adding their usernames after the command.
 #### example
 ```
 /removeuser @redcode9000 @mohammed92001
