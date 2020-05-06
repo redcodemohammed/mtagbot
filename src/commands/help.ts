@@ -6,7 +6,8 @@ export default async (ctx: TelegrafContext) => {
         "For admins:",
         "/adduser - in reply to message or followed by list of usernames, the bot will add them to the tag list of this chat.",
         "/removeuser - in reply to message or  followed by list of usernames, the bot will remove them from the tag list of this chat.",
-        "Anyone:",
+        "",
+        "For anyone:",
         "/tag - will tag everyone in the tag list"
     ];
     ctx.reply(commands.join("\n"));
