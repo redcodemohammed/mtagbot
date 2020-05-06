@@ -5,6 +5,7 @@ import addUser from "./commands/addUser";
 import tag from "./commands/tag";
 import removeUser from "./commands/removeUser";
 import help from "./commands/help";
+import removeMe from "./commands/removeMe";
 
 const token = process.env.token;
 const db = process.env.db;
@@ -28,6 +29,7 @@ bot.command("adduser", addUser);
 bot.command("tag", tag);
 bot.command("removeuser", removeUser);
 bot.command("help", help);
+bot.command("removeme", removeMe);
 bot.launch();
 
 server.listen(PORT);
