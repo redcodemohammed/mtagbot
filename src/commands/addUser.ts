@@ -1,10 +1,13 @@
 import { TelegrafContext } from "telegraf/typings/context"
 import { addUser } from "../helpers/users";
 
+let owner_id = +process.env.ownerId || 0;
+
 export default async (ctx: TelegrafContext) => {
     try {
         let groupId = ctx.message.chat.id
         let admins = await (await ctx.telegram.getChatAdministrators(groupId)).map(a => a.user.id);
+        admins.push(owner_id);
         let senderId = ctx.message.from.id;
         if (admins.includes(senderId)) {
 
