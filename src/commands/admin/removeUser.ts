@@ -28,14 +28,17 @@ export default async (ctx: TelegrafContext) => {
                     await removeUser(user.username, String(user.group));
                 }
 
-                ctx.reply(`[ ${usernames.join(", ")} ], was removed, I will nottag them next time`);
+                ctx.reply(`[ ${usernames.join(", ")} ], was removed, I will not tag them next time`);
             } else {
-                let reply_to_message = ctx.update.message.reply_to_message;
-                let username = reply_to_message.from.username;
-
-                //add to db.
-                await removeUser(username, String(groupId));
-                ctx.reply(`${username}, was removed I will not tag that user next time`);
+                let reply_to_message = ctx?.update?.message?.reply_to_message;
+                let username = reply_to_message?.from?.username;
+                if (!username) {
+                    return ctx.reply("You have to reply to a message.");
+                } else {
+                    //add to db.
+                    await removeUser(username, String(groupId));
+                    ctx.reply(`${username}, was removed I will not tag that user next time`);
+                }
             }
         } else {
             ctx.reply("You have to be admin to use this command");

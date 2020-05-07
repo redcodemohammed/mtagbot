@@ -31,7 +31,7 @@ export default async (ctx: TelegrafContext) => {
 
                 ctx.reply(`[ ${usernames.join(", ")} ], was added, I will tag them next time`);
             } else {
-                let reply_to_message = ctx.update.message.reply_to_message;
+                let reply_to_message = ctx?.update?.message?.reply_to_message;
                 let username = reply_to_message?.from.username;
                 if (!username) {
                     return ctx.reply("You have to reply to a message.");
