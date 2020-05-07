@@ -10,8 +10,12 @@ export default async (ctx: TelegrafContext) => {
             let groups = [... new Set(users.map(u => u.group))];
             let result = [];
             for (let g of groups) {
-                let data = await ctx.telegram.getChat(String(g));
-                result.push(`Title: ${data.title}\nId: ${data.id}\n---------`);
+                try {
+                    let data = await ctx.telegram.getChat(String(g));
+                    result.push(`Title: ${data.title}\nId: ${data.id}\n---------`);
+                } catch{
+                    //
+                }
             }
             ctx.reply(result.join("\n"));
         } else {
