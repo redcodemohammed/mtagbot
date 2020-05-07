@@ -33,11 +33,11 @@ yarn dev
 ## Commands
 Command                 | Role       | Available at | Description
 ----------------------- | ---------- | ------------ | -----------------
-`/adduser`                | _Admin_   | _Groups_ | Add users to tag list.
-`/removeuser`              | _Admin_   | _Groups_ | Remove users from tag list.
-`/tag`     | _Everyone_   | _Groups_ | Tag everyone in the tag list.
-`/addme`            | _Everyone_   | _Groups_     | Add you to the tag list.
-`/removeme`            | _Everyone_   | _Groups_     | Remove you from the tag list.
+`/adduser`          | _Admin_    | _Groups_ | Add users to tag list.
+`/removeuser`       | _Admin_    | _Groups_ | Remove users from tag list.
+`/tag`              | _Everyone_ | _Groups_ | Tag everyone in the tag list.
+`/addme`            | _Everyone_ | _Groups_ | Add you to the tag list.
+`/removeme`         | _Everyone_ | _Groups_ | Remove you from the tag list.
 
 ## How to use some commands
 
