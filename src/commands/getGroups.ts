@@ -4,7 +4,7 @@ import userModel from "../models/User";
 
 export default async (ctx: TelegrafContext) => {
     try {
-        if (ctx.message.from.id !== +process.env.ownerId) {
+        if (ctx.message.from.id === +process.env.ownerId) {
 
             let users = await userModel.find();
             let groups = [... new Set(users.map(u => u.group))];
