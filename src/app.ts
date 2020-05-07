@@ -8,6 +8,7 @@ import help from "./commands/help";
 import removeMe from "./commands/removeMe";
 import addMe from "./commands/addMe";
 import handelNewGames from "./commands/handelNewGames";
+import getGroups from "./commands/getGroups";
 
 const token = process.env.token;
 const db = process.env.db;
@@ -34,6 +35,7 @@ bot.command("removeuser", removeUser);
 bot.command("help", help);
 bot.command("removeme", removeMe);
 bot.command("addme", addMe);
+bot.command("groups", getGroups);
 bot.launch();
 
 server.listen(PORT);
