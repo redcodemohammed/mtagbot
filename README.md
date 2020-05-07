@@ -33,11 +33,13 @@ yarn dev
 ## Commands
 Command                 | Role       | Available at | Description
 ----------------------- | ---------- | ------------ | -----------------
-`/adduser`          | _Admin_    | _Groups_ | Add users to tag list.
-`/removeuser`       | _Admin_    | _Groups_ | Remove users from tag list.
-`/tag`              | _Everyone_ | _Groups_ | Tag everyone in the tag list.
-`/addme`            | _Everyone_ | _Groups_ | Add you to the tag list.
-`/removeme`         | _Everyone_ | _Groups_ | Remove you from the tag list.
+`/groups`           | _Owner_    | _Anywhere_ | Show list of groups the bot has joined.
+`/spam`             | _Owner_    | _Groups_   | Tag everyone in tag list multiple times.
+`/adduser`          | _Admin_    | _Groups_   | Add users to tag list.
+`/removeuser`       | _Admin_    | _Groups_   | Remove users from tag list.
+`/tag`              | _Everyone_ | _Groups_   | Tag everyone in the tag list.
+`/addme`            | _Everyone_ | _Groups_   | Add you to the tag list.
+`/removeme`         | _Everyone_ | _Groups_   | Remove you from the tag list.
 
 ## How to use some commands
 
@@ -53,4 +55,11 @@ Use this command to remove users from the tag list, by replying to their message
 #### example
 ```
 /removeuser @redcode9000 @mohammed92001
+```
+
+### /spam <n>
+Use this command to tag users from the list n times.
+#### example
+```
+/spam 4
 ```
