@@ -7,6 +7,7 @@ import removeUser from "./commands/removeUser";
 import help from "./commands/help";
 import removeMe from "./commands/removeMe";
 import addMe from "./commands/addMe";
+import handelNewGames from "./commands/handelNewGames";
 
 const token = process.env.token;
 const db = process.env.db;
@@ -26,6 +27,7 @@ connect(db, {
 const bot = new Telegraf(token);
 const server = new Server((req, res) => res.end("Bot is working"));
 
+bot.use(handelNewGames);
 bot.command("adduser", addUser);
 bot.command("tag", tag);
 bot.command("removeuser", removeUser);
