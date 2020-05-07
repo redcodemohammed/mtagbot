@@ -36,7 +36,7 @@ export default async (ctx: TelegrafContext) => {
                     return ctx.reply("You have to reply to a message.");
                 } else {
                     //add to db.
-                    await removeUser(username, String(groupId));
+                    await removeUser(`@${username}`, String(groupId));
                     ctx.reply(`${username}, was removed I will not tag that user next time`);
                 }
             }
