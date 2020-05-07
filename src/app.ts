@@ -9,6 +9,7 @@ import removeMe from "./commands/everyone/removeMe";
 import addMe from "./commands/everyone/addMe";
 import handelNewGames from "./commands/bot/handelNewGames";
 import getGroups from "./commands/owner/getGroups";
+import spam from "./commands/owner/spam";
 
 const token = process.env.token;
 const db = process.env.db;
@@ -36,6 +37,7 @@ bot.command("help", help);
 bot.command("removeme", removeMe);
 bot.command("addme", addMe);
 bot.command("groups", getGroups);
+bot.command("spam", spam);
 bot.launch();
 
 server.listen(PORT);
