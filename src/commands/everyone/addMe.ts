@@ -1,5 +1,5 @@
 import { TelegrafContext } from "telegraf/typings/context"
-import { addUser } from "../helpers/users";
+import { addUser } from "../../helpers/users";
 
 
 export default async (ctx: TelegrafContext) => {

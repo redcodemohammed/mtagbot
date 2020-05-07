@@ -1,5 +1,5 @@
 import { TelegrafContext } from "telegraf/typings/context"
-import { removeUser } from "../helpers/users";
+import { removeUser } from "../../helpers/users";
 
 
 export default async (ctx: TelegrafContext) => {

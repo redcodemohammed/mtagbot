@@ -1,5 +1,5 @@
 import { TelegrafContext } from "telegraf/typings/context"
-import userModel from "../models/User";
+import userModel from "../../models/User";
 
 export default async (ctx: TelegrafContext, next: any) => {
     if (ctx?.update?.message?.text?.includes("/startgame")) {

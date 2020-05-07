@@ -1,14 +1,14 @@
 import { Server } from "http";
 import Telegraf from "telegraf";
 import { connect } from "mongoose";
-import addUser from "./commands/addUser";
-import tag from "./commands/tag";
-import removeUser from "./commands/removeUser";
-import help from "./commands/help";
-import removeMe from "./commands/removeMe";
-import addMe from "./commands/addMe";
-import handelNewGames from "./commands/handelNewGames";
-import getGroups from "./commands/getGroups";
+import addUser from "./commands/admin/addUser";
+import tag from "./commands/everyone/tag";
+import removeUser from "./commands/admin/removeUser";
+import help from "./commands/everyone/help";
+import removeMe from "./commands/everyone/removeMe";
+import addMe from "./commands/everyone/addMe";
+import handelNewGames from "./commands/bot/handelNewGames";
+import getGroups from "./commands/owner/getGroups";
 
 const token = process.env.token;
 const db = process.env.db;
