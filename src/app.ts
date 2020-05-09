@@ -11,6 +11,9 @@ import autoTag from "./commands/bot/autoTag";
 import getGroups from "./commands/owner/getGroups";
 import spam from "./commands/owner/spam";
 import clear from "./commands/admin/clear";
+import addGroup from "./commands/bot/addGroup";
+import isGroup from "./middlewares/isGroup";
+import isPrivate from "./middlewares/isPrivate";
 
 const token = process.env.token;
 const db = process.env.db;
@@ -18,7 +21,8 @@ const PORT = process.env.PORT;
 
 connect(db, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 }, err => {
     if (err) {
         console.log(`Mongodb err ${err}`);
@@ -32,21 +36,22 @@ const server = new Server((req, res) => res.end("Bot is working"));
 
 //bot:
 bot.use(autoTag);
+bot.on("new_chat_members", isGroup, addGroup);
 
 //admin:
-bot.command("adduser", addUser);
-bot.command("removeuser", removeUser);
-bot.command("clear", clear);
+bot.command("adduser", isGroup, addUser);
+bot.command("removeuser", isGroup, removeUser);
+bot.command("clear", isGroup, clear);
 
 //everyone:
-bot.command("tag", tag);
-bot.command("addme", addMe);
+bot.command("tag", isGroup, tag);
+bot.command("addme", isGroup, addMe);
+bot.command("removeme", isGroup, removeMe);
 bot.command("help", help);
-bot.command("removeme", removeMe);
 
 //owner:
-bot.command("groups", getGroups);
-bot.command("spam", spam);
+bot.command("groups", isPrivate, getGroups);
+bot.command("spam", isGroup, spam);
 
 bot.launch();
 
