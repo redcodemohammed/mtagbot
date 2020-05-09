@@ -37,6 +37,7 @@ Command                 | Role       | Available at | Description
 `/spam`             | _Owner_    | _Groups_   | Tag everyone in tag list multiple times.
 `/adduser`          | _Admin_    | _Groups_   | Add users to tag list.
 `/removeuser`       | _Admin_    | _Groups_   | Remove users from tag list.
+`/clear`            | _Admin_    | _Groups_   | Remove all users from tag list.
 `/tag`              | _Everyone_ | _Groups_   | Tag everyone in the tag list. You can also send @all.
 `/addme`            | _Everyone_ | _Groups_   | Add you to the tag list.
 `/removeme`         | _Everyone_ | _Groups_   | Remove you from the tag list.
