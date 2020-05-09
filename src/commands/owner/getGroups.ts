@@ -19,7 +19,7 @@ export default async (ctx: TelegrafContext) => {
             }
             ctx.reply(result.join("\n"));
         } else {
-            ctx.reply("You are not the owner.");
+            ctx.reply("You are not the owner, or you sent the command in a public chat.");
         }
     } catch (err) {
         console.log(err);
