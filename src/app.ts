@@ -35,8 +35,8 @@ connect(db, {
 const bot = new Telegraf(token);
 const server = new Server((req, res) => res.end("Bot is working"));
 
-//bot:
-bot.use(isGroup, autoTag);
+// //bot:
+bot.use(autoTag);
 bot.on("new_chat_members", isGroup, addGroup);
 bot.on("left_chat_member", isGroup, removeGroup);
 
