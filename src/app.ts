@@ -14,6 +14,7 @@ import clear from "./commands/admin/clear";
 import addGroup from "./commands/bot/addGroup";
 import isGroup from "./middlewares/isGroup";
 import isPrivate from "./middlewares/isPrivate";
+import removeGroup from "./commands/bot/removeGroup";
 
 const token = process.env.token;
 const db = process.env.db;
@@ -35,8 +36,9 @@ const bot = new Telegraf(token);
 const server = new Server((req, res) => res.end("Bot is working"));
 
 //bot:
-bot.use(autoTag);
+bot.use(isGroup, autoTag);
 bot.on("new_chat_members", isGroup, addGroup);
+bot.on("left_chat_member", isGroup, removeGroup);
 
 //admin:
 bot.command("adduser", isGroup, addUser);

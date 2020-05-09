@@ -9,9 +9,8 @@ const tagOn = [
 
 export default async (ctx: TelegrafContext, next: any) => {
     let text = ctx?.update?.message?.text;
-    let test = tagOn.find(el => text?.includes(el)) !== undefined
+    let test = tagOn.find(el => text?.startsWith(el)) !== undefined
     if (test) {
-
         let group_id = ctx.message.chat.id;
         let users = await userModel.find({ group: String(group_id) });
 
