@@ -7,7 +7,7 @@ import removeUser from "./commands/admin/removeUser";
 import help from "./commands/everyone/help";
 import removeMe from "./commands/everyone/removeMe";
 import addMe from "./commands/everyone/addMe";
-import handelNewGames from "./commands/bot/handelNewGames";
+import autoTag from "./commands/bot/autoTag";
 import getGroups from "./commands/owner/getGroups";
 import spam from "./commands/owner/spam";
 
@@ -29,7 +29,7 @@ connect(db, {
 const bot = new Telegraf(token);
 const server = new Server((req, res) => res.end("Bot is working"));
 
-bot.use(handelNewGames);
+bot.use(autoTag);
 bot.command("adduser", addUser);
 bot.command("tag", tag);
 bot.command("removeuser", removeUser);
