@@ -5,15 +5,23 @@ let owner_id = +process.env.ownerId || 0;
 
 export default async (ctx: TelegrafContext) => {
     try {
+        //get list of the admins and add the owner id:
         let groupId = ctx.message.chat.id
         let admins = await (await ctx.telegram.getChatAdministrators(groupId)).map(a => a.user.id);
         admins.push(owner_id);
+
+        // check if the sender is admin:
         let senderId = ctx.message.from.id;
         if (admins.includes(senderId)) {
 
-            let usernames = ctx.message.text.split(" ")
+            // get usernames:
+            let usernames = ctx.message.text.split(" ");
+            // remove white spaces:
             usernames = usernames.filter(u => u);
+            // remove the command string:
             usernames.shift();
+
+            // check if there's a remaining username
             if (usernames.length > 0) {
                 if (!usernames.every(username => username.startsWith("@"))) {
                     let invalidUsernames = usernames.filter(username => !username.startsWith("@"));
