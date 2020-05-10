@@ -64,3 +64,5 @@ Use this command to tag users from the list n times.
 ```
 /spam 4
 ```
+### @admins
+Use this command to tag all the admins in the chat.
