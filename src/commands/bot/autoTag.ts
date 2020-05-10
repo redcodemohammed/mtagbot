@@ -13,11 +13,11 @@ export default async (ctx: TelegrafContext, next: any) => {
         let test = text?.startsWith("@admin");
         if (test) {
             let admins = (await ctx.getChatAdministrators())
-                .map(admin => `@${admin.user.username}`)
+                .map(admin => admin.user.username ? `@${admin.user.username}` : `[${admin.user.first_name}](tg://user?id=${admin.user.id})`)
                 .filter(admin => !admin.endsWith("bot"));
 
             if (admins.length > 0) {
-                ctx.reply(admins.join(" "));
+                ctx.replyWithMarkdown(admins.join(" "));
             }
         } else if (tagOn.find(el => text?.startsWith(el)) !== undefined) {
             let group_id = ctx.message.chat.id;
