@@ -6,7 +6,11 @@ import groupModel from "../../models/Group";
 export default async (ctx: TelegrafContext) => {
     try {
         if (ctx.message.chat.id === +process.env.ownerId) {
-            let groupId = ctx?.message?.text.split(" ").filter(g => g)[1];
+            let groupId = ctx?.message?.text?.split(" ")?.filter(g => g)[1];
+            if (!groupId) return ctx.reply("Please select a group for me to leave.");
+
+            if (!groupId.startsWith("-")) groupId = "-".concat(groupId);
+
             let group = await groupModel.findOne({ groupId });
 
 
