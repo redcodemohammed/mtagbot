@@ -18,6 +18,7 @@ import tag from "./commands/everyone/tag";
 import help from "./commands/everyone/help";
 import removeMe from "./commands/everyone/removeMe";
 import addMe from "./commands/everyone/addMe";
+import list from "./commands/everyone/list";
 
 // owner
 import getGroups from "./commands/owner/getGroups";
@@ -64,6 +65,7 @@ bot.command("tag", isGroup, tag);
 bot.command("addme", isGroup, addMe);
 bot.command("removeme", isGroup, removeMe);
 bot.command("help", help);
+bot.command("list", list);
 
 //owner:
 bot.command("groups", isPrivate, getGroups);

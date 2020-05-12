@@ -39,6 +39,7 @@ Command                 | Role       | Available at | Description
 `/removeuser`       | _Admin_    | _Groups_   | Remove users from tag list.
 `/clear`            | _Admin_    | _Groups_   | Remove all users from tag list.
 `/tag`              | _Everyone_ | _Groups_   | Tag everyone in the tag list. You can also send @all.
+`/list`              | _Everyone_ | _Groups_   | List everyone in the tag list, without tagging them.
 `/addme`            | _Everyone_ | _Groups_   | Add you to the tag list.
 `/removeme`         | _Everyone_ | _Groups_   | Remove you from the tag list.
 
