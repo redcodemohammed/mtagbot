@@ -10,6 +10,7 @@ export default async (ctx: TelegrafContext) => {
         "",
         "For anyone:",
         "/tag - will tag everyone in the tag list, you can also send @all.",
+        "/list - will send a list with everyone in the tag list, without tagging them.",
         "/addme - will add you to the tag list",
         "/removeme - will remove you from tag list"
     ];
