@@ -33,7 +33,8 @@ yarn dev
 ## Commands
 Command                 | Role       | Available at | Description
 ----------------------- | ---------- | ------------ | -----------------
-`/groups`           | _Owner_    | _Anywhere_ | Show list of groups the bot has joined.
+`/groups`           | _Owner_    | _Private_ | Show list of groups the bot has joined.
+`/leave`           | _Owner_    | _Private_ | Followed by group id, the bot will leave that group and delete it from the database.
 `/spam`             | _Owner_    | _Groups_   | Tag everyone in tag list multiple times.
 `/adduser`          | _Admin_    | _Groups_   | Add users to tag list.
 `/removeuser`       | _Admin_    | _Groups_   | Remove users from tag list.

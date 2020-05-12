@@ -23,6 +23,7 @@ import list from "./commands/everyone/list";
 // owner
 import getGroups from "./commands/owner/getGroups";
 import spam from "./commands/owner/spam";
+import leave from "./commands/owner/leave";
 
 // middlewares
 import isGroup from "./middlewares/isGroup";
@@ -70,6 +71,7 @@ bot.command("list", list);
 //owner:
 bot.command("groups", isPrivate, getGroups);
 bot.command("spam", isGroup, spam);
+bot.command("leave", isPrivate, leave);
 
 // start
 bot.launch();
