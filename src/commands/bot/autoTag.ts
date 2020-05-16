@@ -35,13 +35,3 @@ export default async (ctx: TelegrafContext, next: any) => {
         next();
     }
 }
-
-
-
-// let text = ctx?.update?.message?.text;
-// let test = tagOn.find(el => text?.startsWith(el)) !== undefined
-// if (test) {
-
-// } else {
-//     next();
-// }
