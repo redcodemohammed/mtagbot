@@ -1,5 +1,4 @@
 import { TelegrafContext } from "telegraf/typings/context"
-import userModel from "../../models/User";
 import groupModel from "../../models/Group";
 
 
